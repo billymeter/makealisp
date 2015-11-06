@@ -28,6 +28,7 @@ lval* lval_add(lval* v, lval* x);
 void lval_print(lval* v);
 void lval_println(lval* v);
 void lval_expr_print(lval* v, char open, char close);
+lval* lval_join(lval* x, lval* y);
 
 lval* lval_read_num(mpc_ast_t* t);
 lval* lval_read(mpc_ast_t* t);
@@ -38,4 +39,11 @@ lval* lval_eval(lval* v);
 lval* lval_pop(lval* v, int i);
 lval* lval_take(lval* v, int i);
 
+lval* builtin(lval* a, char* func);
 lval* builtin_op(lval* a, char* op);
+lval* builtin_head(lval* a);
+lval* builtin_tail(lval* a);
+lval* builtin_list(lval* a);
+lval* builtin_eval(lval* a);
+lval* builtin_join(lval* a);
+
